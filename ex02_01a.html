@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f4f6fb;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 40px 20px;
+        color: #333;
+      }
+
+      h1 {
+        font-size: 34px;
+        margin-bottom: 10px;
+        color: #222;
+        letter-spacing: 1px;
+      }
+
+      a {
+        text-decoration: none;
+        color: white;
+        background: #111;
+        padding: 8px 14px;
+        border-radius: 6px;
+        margin-bottom: 20px;
+        transition: 0.25s;
+      }
+
+      a:hover {
+        background: #444;
+      }
+
+      form {
+        background: white;
+        padding: 35px;
+        width: 100%;
+        max-width: 520px;
+        border-radius: 12px;
+        border: 1px solid #e3e6ef;
+      }
+
+      hr {
+        border: none;
+        height: 1px;
+        background: #eceef4;
+        margin: 22px 0;
+      }
+
+      input[type="text"],
+      input[type="number"] {
+        width: 100%;
+        padding: 10px 12px;
+        margin-top: 6px;
+        margin-bottom: 14px;
+        border: 1px solid #d7dbe6;
+        border-radius: 6px;
+        font-size: 14px;
+      }
+
+      input[type="text"]:focus,
+      input[type="number"]:focus {
+        outline: none;
+        border-color: #111;
+      }
+
+      input[type="checkbox"],
+      input[type="radio"] {
+        margin-left: 10px;
+        margin-right: 4px;
+        transform: scale(1.1);
+      }
+
+      input[type="submit"],
+      input[type="reset"] {
+        margin-top: 15px;
+        padding: 10px 16px;
+        border: none;
+        border-radius: 6px;
+        font-size: 14px;
+        cursor: pointer;
+      }
+
+      input[type="submit"] {
+        background: #111;
+        color: white;
+      }
+
+      input[type="submit"]:hover {
+        background: #333;
+      }
+
+      input[type="reset"] {
+        background: #e5e7ee;
+      }
+
+      input[type="reset"]:hover {
+        background: #d6d9e2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>input 기능</h1>
+    <hr />
+    <a href="index.html">홈으로</a>
+    <form
+      action="https://docs.google.com/forms/u/0/d/e/04901FAIpQLSdr574KqxTMjNpjD3sw0n6HYAO5_pjSO89g-uLbPM8x7u0j-w/formResponse"
+      method="POST"
+    >
+      First name : <input type="text" name="entry.1935641716" /><br />
+      Last name : <input type="text" name="entry.605835699" /><br />
+      Age :
+      <input
+        type="number"
+        min="12"
+        max="20"
+        value="15"
+        step="1"
+        name="entry.1085368149"
+      />
+      <br />
+
+      <hr />
+      아침식사 밥? :
+      <input
+        type="checkbox"
+        name="entry.1427749362"
+        value="밥을 먹는다."
+        id=""
+      />
+      아침식사 빵? :
+      <input
+        type="checkbox"
+        name="entry.1427749362"
+        value="빵을 먹는다."
+        id=""
+        checked
+      />
+      <br />
+
+      <hr />
+      <!-- ({radio$:}input:radio+br)*4  -->
+      학생인가요? <br />
+      예 :<input
+        type="radio"
+        name="entry.1794571361"
+        id=""
+        value="예"
+        checked
+      />
+      아니요 :<input
+        type="radio"
+        name="entry.1794571361"
+        id=""
+        value="아니요"
+      />
+
+      <hr />
+      공부 잘하나요? <br />
+      잘해요 :<input
+        type="radio"
+        name="entry.2014030703"
+        id=""
+        value="잘해요"
+      />
+      보통요 :<input
+        type="radio"
+        name="entry.2014030703"
+        id=""
+        checked
+        value="보통요"
+      />
+      <br />
+      <input type="submit" />
+      <input type="reset" />
+    </form>
+  </body>
+</html>

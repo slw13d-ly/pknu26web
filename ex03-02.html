@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 100%;
+        height: 80vh;
+      }
+      td {
+        border: 1px solid #ccc;
+      }
+      .header {
+        height: 15%;
+        background-color: lightblue;
+      }
+      .nav {
+        height: 5%;
+        background-color: white;
+        text-align: center;
+      }
+      .content {
+        height: 70%;
+      }
+      .footer {
+        height: 10%;
+        background-color: lightblue;
+      }
+      .center {
+        height: 60%;
+        background-color: antiquewhite;
+      }
+      #title {
+        font-size: 2rem;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>테이블 응용</h1>
+    <hr />
+    <a href="index.html">홈으로</a><br /><br />
+    <!-- table>(tr>td*3)*3 -->
+    <table>
+      <tr class="header">
+        <td colspan="3" id="title">NEVER</td>
+      </tr>
+      <tr class="nav">
+        <td colspan="3">
+          메일 | 카페 | 블로그 | 스토어 | 뉴스 | 증권 | 부동산 | 지도 | 웹툰 |
+          치지직
+        </td>
+      </tr>
+      <tr class="content">
+        <td><img src="./aside.png" alt="" /></td>
+        <td class="center">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia
+          cumque atque quia, at reiciendis exercitationem quibusdam iure enim
+          excepturi maiores, ullam architecto iste earum eius et pariatur cum
+          labore repellat ad soluta accusantium rem vel. Laboriosam fuga
+          cupiditate nobis assumenda animi, dolor natus nihil eligendi quae
+          aperiam cumque voluptatibus quam blanditiis laborum. Sunt est ab, in
+          maiores eaque placeat nobis at vitae necessitatibus dignissimos
+          dolore, nesciunt dolores, voluptates aliquam? Quisquam, illo ab?
+          Cumque recusandae iusto ex laboriosam fuga illum explicabo, totam
+          accusantium quo laborum consequatur dolor corrupti voluptatibus, animi
+          reiciendis excepturi? Dolore velit quibusdam maiores id vel cupiditate
+          repudiandae facere!
+        </td>
+        <td><img src="./aside.png" alt="" /></td>
+      </tr>
+      <tr class="footer">
+        <td colspan="3"></td>
+      </tr>
+    </table>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>선택자 id, class</title>
+    <!-- CSS 선택자 우선 순위 : id → class → * -->
+    <style>
+      * {
+        background-color: midnightblue;
+        color: aliceblue;
+      }
+      div,
+      p {
+        background-color: darkcyan;
+      }
+      p {
+        background-color: goldenrod;
+      }
+      .gym {
+        border: 2px solid #000;
+      }
+      .bab {
+        border: 2px dotted #f00;
+      }
+      #tree {
+        background-color: steelblue;
+      }
+      #five {
+        color: darkgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>선택자 id, class</h1>
+    <hr />
+    <a href="index.html">홈으로</a><br />
+
+    <p>숫자입니다.</p>
+    <!-- . = class -->
+    <!-- # = id -->
+
+    <!-- div.gym  -->
+    <div class="gym">1</div>
+    <div class="gym bab play">2</div>
+    <!-- div.gym#tree  -->
+    <div class="gym" id="tree">3</div>
+    <div class="bab">4</div>
+    <div class="bab" id="five">5</div>
+    <p>그렇다네요.</p>
+  </body>
+</html>

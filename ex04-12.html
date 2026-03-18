@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Box position</title>
+    <style>
+      p {
+        width: 130px;
+        height: 80px;
+        padding: 10px;
+        background-color: aqua;
+        margin: 0;
+      }
+      .myR {
+        background-color: coral;
+        position: relative;
+        top: 50px;
+        left: 50px;
+        z-index: 20;
+      }
+      .myG {
+        background-color: greenyellow;
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        z-index: 1000;
+      }
+      .myB {
+        background-color: cornflowerblue;
+        position: relative;
+        top: 150px;
+        left: 150px;
+        z-index: 20;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Box position</h1>
+    <hr />
+    <a href="index.html">홈으로</a><br />
+    <div>
+      <p class="myR">박스의 크기는 위치를 잘 살펴보아야 합니다.</p>
+      <p class="myG">박스의 포지션 속성을 바꿔가며 테스트해 보아야 합니다.</p>
+      <p class="myB">
+        포지션을 이해하기 위해서는 시험해보고 관찰해보는 것이 절대적으로
+        필요합니다
+      </p>
+    </div>
+  </body>
+</html>

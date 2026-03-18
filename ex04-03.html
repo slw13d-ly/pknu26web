@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>미니멀 페이지</title>
+    <!-- <link rel="stylesheet" href="myreset.css" /> -->
+    <style>
+      /* margin: 20px 20px 20px 20px
+        4가지: 위부터 시계방향 - 위, 오른쪽, 아래, 왼쪽
+        
+        margin: 20px 40px
+        2가지: 위, 아래
+  
+        margin: 20px
+        1가지: 전부 
+        
+        margin-top:
+        margin-bottom:
+        */
+      /* --- */
+      /* 대각선
+        4가지: 위부터 시계방향(왼쪽 위, 오른쪽 위, 오른쪽 아래, 왼쪽 아래) 
+        2가지: 왼쪽 위 + 대각선, 오른쪽 위 + 대각선
+        1가지: 전부
+        border-radius: 10px 10px 20px 20px;
+        */
+
+      body {
+        background-color: cornflowerblue;
+        background: url(https://png.pngtree.com/background/20230416/original/pngtree-autumn-watercolor-landscape-illustration-picture-image_2444419.jpg)
+          no-repeat;
+        background-size: cover;
+      }
+      h1 {
+        border-bottom: 2.5px solid white;
+        padding-bottom: 10px;
+        color: midnightblue;
+      }
+
+      span > a {
+        text-decoration: none;
+        color: lightcoral;
+      }
+
+      a:active {
+        color: red;
+      }
+
+      div {
+        width: 50px;
+        height: 50px;
+        background-color: midnightblue;
+        border-radius: 20px 40px;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html">홈으로</a><br />
+    <hr />
+    <h1>Emotion</h1>
+    <span><a href="#">SAD</a></span>
+    <span><a href="#">ANGRY</a></span>
+    <span><a href="#">HAPPY</a></span>
+    <span><a href="#">LOVE</a></span>
+
+    <div></div>
+  </body>
+</html>

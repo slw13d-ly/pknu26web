@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>사진 가운데</title>
+    <style>
+      /* :root = CSS 변수 선언 */
+      :root {
+        /* -- : CSS 변수 선언 문법 / 사진의 크기 만큼 변수 선언 */
+        --width1: 300px;
+      }
+      div {
+        width: 100%;
+      }
+      /* img가 span의 역할, block으로 지정 시 margin 적용이 가능 */
+      /* img {
+        display: block;
+        margin: 10px auto;
+        width: 300px;
+      } */
+      img {
+        /* left는 연산이 되어야 화면 사이즈에 맞게 중앙 정렬 가능 */
+        position: relative;
+        width: var(--width1);
+        /* left: calc(50%); = 화면의 50%만큼 left → 사진 길이를 생각하지 않으면 사진이 오른쪽으로 치우침(사진의 왼쪽 꼭지점이 기준) */
+        /* left: calc(50% - var(--width1) / 2) = 사진의 절반, 화면의 50%만큼 left */
+        left: calc(50% - var(--width1) / 2);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>가운데 정렬</h1>
+    <hr />
+    <a href="index.html">홈으로</a><br />
+    <div>
+      <img
+        src="https://search.pstatic.net/common/?src=http%3A%2F%2Fblogfiles.naver.net%2FMjAyNDA0MTJfNjMg%2FMDAxNzEyOTI5OTk0MjUx.wW7baOKcw9Un6imV_O9dwxvn_PSy0-qQFjee2ILaoYsg.MriHoJRNorJIz_9bUX5DG41NGloQHqVRHwuvDTC0kfcg.JPEG%2FIMG_5552.JPG&type=sc960_832"
+        alt=""
+      />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>구조적 가상클래스</title>
+    <style>
+      /* div:first-of-type = 첫번째 div 선택 */
+      div:first-of-type {
+        border: 1px solid crimson;
+      }
+      /* 장남인지 막내인지의 느낌 */
+      p:first-child {
+        background-color: cornflowerblue;
+      }
+      p:last-child {
+        background-color: lightcoral;
+      }
+      /* p타입 중에 막내인지 */
+      p:last-of-type {
+        color: red;
+      }
+      /* 안되는 이유 - ?  
+      div:last-child {
+        border: 1px solid blue;
+      } */
+      div:last-of-type {
+        border: 1px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>구조적 가상클래스</h1>
+    <hr />
+    <a href="index.html">홈으로</a><br />
+    <hr />
+
+    <!-- (div>p*5+span*2)*2 -->
+    <div>
+      <p>first 입니다.</p>
+      <span>테스트입니다.</span>
+      <p>first가 아닙니다.</p>
+      <p>first가 아닙니다.</p>
+      <p>first가 아닙니다.</p>
+      <p>last 입니다.</p>
+      <span>테스트입니다.</span>
+    </div>
+    <hr />
+    <div>
+      <p>first 입니다.</p>
+      <p>first가 아닙니다.</p>
+      <p>first가 아닙니다.</p>
+      <p>first가 아닙니다.</p>
+      <p>last 입니다.</p>
+    </div>
+  </body>
+</html>

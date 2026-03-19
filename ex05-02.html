@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>position fixed</title>
+    <!-- relative - 단독 -->
+    <!-- absolute - position 또는 body에 의존 -->
+    <!-- sticky - top 또는 bottom 위치에 위존 -->
+    <!-- fixted - 원하는 위치에 그냥 고정 -->
+    <style>
+      .table-wrapper {
+        height: 200px;
+        overflow: auto;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        /* position: fixed; */
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+      thead,
+      tfoot {
+        position: sticky;
+        color: white;
+        background-color: cornflowerblue;
+      }
+      thead {
+        top: 0;
+      }
+      tfoot {
+        bottom: 0;
+      }
+      #fix {
+        position: fixed;
+        right: 30px;
+        bottom: 70px;
+        background-color: goldenrod;
+        padding: 10px;
+        border-radius: 50%;
+        width: 30px;
+        height: 30px;
+        font-size: 2rem;
+        color: white;
+        text-align: center;
+        line-height: 1.1;
+        box-shadow: 5px 5px 20px 2px black;
+      }
+
+      tr:nth-of-type(even) {
+        background-color: antiquewhite;
+      }
+    </style>
+    relative: 단독 absolute: position
+  </head>
+  <body>
+    <h1>position fixed</h1>
+    <hr />
+    <a href="index.html">홈으로</a><br />
+    <!-- div.table-wrapper>table>thead>tr>th*4^^tbody>(tr>td*4)*10^^tfoot>tr>td*4 -->
+    <div class="table-wrapper">
+      <table>
+        <thead>
+          <tr>
+            <th>번호</th>
+            <th>이름</th>
+            <th>나이</th>
+            <th>직업</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>홍길동</td>
+            <td>25</td>
+            <td>아버지 없음</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>이순신</td>
+            <td>32</td>
+            <td>나를 알리지마라</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>궁예</td>
+            <td>45</td>
+            <td>누가 기침을 하였는가</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>유관순</td>
+            <td>17</td>
+            <td>대한독립 만세</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>세종대왕</td>
+            <td>53</td>
+            <td>훈민정음 창제</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>장보고</td>
+            <td>38</td>
+            <td>해상왕</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>신사임당</td>
+            <td>48</td>
+            <td>현모양처</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>김유신</td>
+            <td>45</td>
+            <td>삼국통일 기여</td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>윤봉길</td>
+            <td>24</td>
+            <td>상하이 의거</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>안중근</td>
+            <td>31</td>
+            <td>이토 히로부미 저격</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="4">명단의 끝</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+    <div id="fix">^</div>
+  </body>
+</html>

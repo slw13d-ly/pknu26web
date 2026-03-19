@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>가상요소선택자 응용</title>
+    <style>
+      li {
+        list-style: none;
+        float: left;
+        padding: 0 15px;
+        /* margin: 0 15px; */
+        cursor: pointer;
+      }
+
+      li::after {
+        content: "|";
+        color: #888;
+        margin-right: -17px;
+        float: right;
+      }
+      li:last-of-type::after {
+        content: "";
+      }
+    </style>
+  </head>
+  <body>
+    <h1>메뉴 만들기</h1>
+    <hr />
+    <a href="index.html">홈으로</a><br />
+    <ul>
+      <li>로그인</li>
+      <li>회원가입</li>
+      <li>마이페이지</li>
+      <li>사이트맵</li>
+      <li>고객센터</li>
+    </ul>
+    <script>
+      // const pt = document.querySelectorAll("li") // li를 잡아서 배열로 만듦
+      const pt = document.querySelectorAll("li");
+      // 차례로 처리가 아닌 누르면 창이 넘어가고 누르면 이벤트가 생기는 등 비동기 처리해야 하기에 콜백 함수 사용
+      pt.forEach((v) => {
+        v.addEventListener("click", () => {
+          alert("누르지마!");
+        });
+      });
+    </script>
+  </body>
+</html>

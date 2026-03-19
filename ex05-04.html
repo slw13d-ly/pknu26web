@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>float 응용</title>
+    <style>
+      :root {
+        --myred1: red;
+        --myred2: rgb(255, 135, 135);
+        --myred3: rgb(255, 231, 231);
+        --mygreen1: green;
+        --mygreen2: rgb(131, 255, 131);
+        --mygreen3: rgb(218, 255, 218);
+        --myblue1: blue;
+        --myblue2: rgb(124, 148, 255);
+        --myblue3: rgb(218, 234, 255);
+        --mypink1: pink;
+        --mypink2: rgb(182, 91, 106);
+        --mypink3: rgb(139, 45, 61);
+        --myyellow1: yellow;
+        --myyellow2: rgb(255, 255, 150);
+        --myyellow3: rgb(255, 255, 239);
+      }
+      header,
+      footer {
+        width: 300px;
+        height: 40px;
+        background-color: var(--myblue2);
+        border: 5px solid var(--myblue1);
+        box-sizing: border-box;
+      }
+      footer {
+        background-color: var(--mypink1);
+        border: 5px solid var(--mypink2);
+      }
+      nav {
+        width: 50px;
+        height: 250px;
+        background-color: var(--mygreen2);
+        border: 5px solid var(--mygreen1);
+        box-sizing: border-box;
+        float: left;
+      }
+      main {
+        width: 250px;
+        margin-left: 50px;
+      }
+      article {
+        height: 50px;
+        background-color: var(--myyellow2);
+        border: 5px solid var(--myyellow1);
+        box-sizing: border-box;
+      }
+      section {
+        height: 200px;
+        background-color: var(--myred2);
+        border: 5px solid var(--myred1);
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>float 응용(레이아웃)</h1>
+    <hr />
+    <a href="index.html">홈으로</a><br />
+    <!-- div.box>header{header}+div>nav{nav}+main>article{article}+section{section}^^footer{footer} -->
+    <div class="box">
+      <header>header</header>
+      <div>
+        <nav>nav</nav>
+        <main>
+          <article>article</article>
+          <section>section</section>
+        </main>
+      </div>
+      <footer>footer</footer>
+    </div>
+  </body>
+</html>

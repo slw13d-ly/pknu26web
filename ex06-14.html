@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>flex</title>
+    <!-- 부모에 속성을 부여해야 자식이 속성을 먹음!! -->
+    <style>
+      #box {
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        /* align-items: flex-start; */
+        /* align-items: flex-end; */
+        /* align-items: stretch; */ /* height: 200px;로 div의 범위를 저장해두면 늘어나는게 안보임 */
+        align-items: center;
+      }
+      #box > div {
+        width: 200px;
+        height: 200px;
+        background-color: tomato;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #box > div:nth-of-type(2) {
+        background-color: cadetblue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>flex, align-items</h1>
+    <hr />
+    <a href="index.html">홈으로</a><br />
+    <div id="box">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+    </div>
+  </body>
+</html>
+<!-- 주축과 교차축 -->

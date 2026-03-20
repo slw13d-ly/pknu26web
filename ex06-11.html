@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>keyframes</title>
+    <style>
+      div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      h2{
+        color: #000000;
+        font-size: 3rem;
+        transition: 2s ease-in;
+        animation: items 0.7 ease-in infinite alternate;
+        border-radius: 10px;
+        line-height: 1.2;
+      }
+      @keyframes items{
+        0%{
+          padding: 10px
+          background-color: rgb(91, 255, 255);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>keyframes</h1>
+    <hr />
+    <a href="index.html">홈으로</a><br />
+    <!-- div>h2{반가워요} -->
+    <div>
+      <h2>반가워요</h2>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>탱탱볼</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background-color: lightcoral;
+        animation: mymove 2s ease infinite;
+      }
+      @keyframes mymove {
+        0% {
+          transform: translate(0);
+        }
+        60% {
+          transform: translate(0, 500px);
+        }
+        65% {
+          transform: translate(0, 500px) scaleX(1.1) scaleY(0.8);
+        }
+        100% {
+          transform: translate(0);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>탱탱볼</h1>
+    <hr />
+    <a href="index.html">홈으로</a><br />
+
+    <div></div>
+  </body>
+</html>

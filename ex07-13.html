@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      table {
+        margin: auto;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.5);
+      }
+      tr,
+      td {
+        padding: 5px 10px;
+        background-color: aliceblue;
+      }
+      tr:nth-of-type(even) td {
+        background-color: lightgreen;
+      }
+    </style>
+    <script>
+      // list 누적 시켜서 값을 넣는 것
+      const inp = prompt("몇 단을 보여드릴까요?") || 2; // 값을 입력하지 않을 경우, 2가 기본으로 들어가게 설정
+      let list = `<table><tr><td colspan="2" style="text-align: center">구구단 ${inp}단</td></tr>`;
+
+      for (let i = 1; i < 10; i++) {
+        list += `<tr><td>${inp} x ${i}</td><td>${inp * i}</td></tr>`;
+      }
+
+      list += `</table>`;
+      document.write(list);
+
+      // 무식하게 손으로 쓰기 히히
+      //   list += `  <tr><td>${inp} 3</td><td>${inp * 3}</td></tr>`;
+      //   list += `  <tr><td>${inp} 2</td><td>${inp * 2}</td></tr>`;
+      //   list += `  <tr><td>${inp} 4</td><td>${inp * 4}</td></tr>`;
+      //   list += `  <tr><td>${inp} 5</td><td>${inp * 5}</td></tr>`;
+      //   list += `  <tr><td>${inp} 6</td><td>${inp * 6}</td></tr>`;
+      //   list += `  <tr><td>${inp} 7</td><td>${inp * 7}</td></tr>`;
+      //   list += `  <tr><td>${inp} 8</td><td>${inp * 8}</td></tr>`;
+      //   list += `  <tr><td>${inp} 9</td><td>${inp * 9}</td></tr>`;
+    </script>
+  </head>
+  <body></body>
+</html>

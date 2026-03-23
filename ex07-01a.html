@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>간단한 쇼핑몰</title>
+    <style>
+      h1 {
+        width: 100%;
+        text-align: center;
+        background-color: midnightblue;
+        color: white;
+        position: fixed;
+        top: 10px;
+        border-radius: 10px;
+        padding: 5px;
+        margin-top: 20px;
+      }
+      /* h2 {
+        color: #777;
+        text-align: center;
+      } */
+      ul {
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        margin-top: 60px;
+      }
+      li {
+        width: 300px;
+        height: 200px;
+        padding: 15px;
+        border: 1px solid #aaa;
+        border-radius: 10px;
+        margin: 10px;
+        background-color: white;
+        overflow: hidden;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .caption {
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        border-radius: 10px;
+        text-align: center;
+        /* width: 300px; */
+        /* display: flex; */
+        height: 100%;
+        transition: all 0.5s ease;
+        opacity: 0;
+      }
+      li:hover .caption {
+        transform: translateY(-205px);
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <hr />
+    <a href="index.html">홈으로</a><br />
+
+    <!-- div.box>h1{신상품 목록}+ul>(li>img+div.caption>h2{상품$}+p{상품$ 설명텍스트}+p{가격: 1$,12$원})*9 -->
+    <div class="box">
+      <h1>신상품 목록</h1>
+      <ul>
+        <li>
+          <img
+            src="https://live.lge.co.kr/wp-content/uploads/2020/11/lg_net-a-porter-2.jpg"
+            alt="의류사진1"
+          />
+          <div class="caption">
+            <h2>상품1</h2>
+            <p>상품1 설명텍스트</p>
+            <p>가격: 11,121원</p>
+          </div>
+        </li>
+        <li>
+          <img
+            src="https://cdn.newspenguin.com/news/photo/202505/19656_56545_51.jpg"
+            alt="의류사진2"
+          />
+          <div class="caption">
+            <h2>상품2</h2>
+            <p>상품2 설명텍스트</p>
+            <p>가격: 12,122원</p>
+          </div>
+        </li>
+        <li>
+          <img
+            src="https://img.hankyung.com/photo/202206/99.30338841.1.jpg"
+            alt="의류사진3"
+          />
+          <div class="caption">
+            <h2>상품3</h2>
+            <p>상품3 설명텍스트</p>
+            <p>가격: 13,123원</p>
+          </div>
+        </li>
+        <li>
+          <img
+            src="https://cdn.itnk.co.kr/news/photo/202210/70189_34802_137.png"
+            alt="의류사진4"
+          />
+          <div class="caption">
+            <h2>상품4</h2>
+            <p>상품4 설명텍스트</p>
+            <p>가격: 14,124원</p>
+          </div>
+        </li>
+        <li>
+          <img
+            src="https://cdn.impacton.net/news/photo/202306/6769_10746_4638.jpg"
+            alt="의류사진5"
+          />
+          <div class="caption">
+            <h2>상품5</h2>
+            <p>상품5 설명텍스트</p>
+            <p>가격: 15,125원</p>
+          </div>
+        </li>
+        <li>
+          <img
+            src="https://vstatic.vietnam.vn/vietnam/resource/IMAGE/2026/03/22/1774144960197_1-06460456.jpeg"
+            alt="의류사진6"
+          />
+          <div class="caption">
+            <h2>상품6</h2>
+            <p>상품6 설명텍스트</p>
+            <p>가격: 16,126원</p>
+          </div>
+        </li>
+        <li>
+          <img
+            src="https://images.freeimages.com/images/large-previews/bf6/stylish-clothing-display-0410-5711001.jpg?fmt=webp&w=500"
+            alt="의류사진7"
+          />
+          <div class="caption">
+            <h2>상품7</h2>
+            <p>상품7 설명텍스트</p>
+            <p>가격: 17,127원</p>
+          </div>
+        </li>
+        <li>
+          <img
+            src="https://dt40dm21pj8em.cloudfront.net/uploads/froala/file/4731/%EC%9D%98%EB%A5%98%EB%B2%A4%EB%8D%94%201.jpg"
+            alt="의류사진8"
+          />
+          <div class="caption">
+            <h2>상품8</h2>
+            <p>상품8 설명텍스트</p>
+            <p>가격: 18,128원</p>
+          </div>
+        </li>
+        <li>
+          <img
+            src="https://draph.ai/wp-content/uploads/2025/04/%EC%87%BC%ED%95%91%EB%AA%B0-%EC%9D%98%EB%A5%98-%EC%82%AC%EC%A7%84-%EC%B4%AC%EC%98%81-%EB%85%B8%ED%95%98%EC%9A%B0-5%EA%B0%80%EC%A7%80-002-1-1024x1024.png"
+            alt="의류사진9"
+          />
+          <div class="caption">
+            <h2>상품9</h2>
+            <p>상품9 설명텍스트</p>
+            <p>가격: 19,129원</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

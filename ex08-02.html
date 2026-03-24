@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script>
+      const inp = Number(prompt("숫자를 적어주세요", 1)); // * 1; 숫자형으로 만들기
+      console.log(typeof inp, inp); // 입력은 문자열로 받아짐.
+
+      if (inp > 3) {
+        console.log("3보다 큽니다.");
+        alert("3보다 큽니다.");
+        document.write(`<h2>입력하신 ${inp}는 3보다 큽니다.<h2>`);
+      } else if (inp == 3) {
+        // else if (inp == 3) 문자열, 숫자 상관없이 3과 같으면 같다고 함 / (inp === 3) 숫자 3만 같다고 인식 / (inp === '3') 3을 문자열로 인식
+        console.log("3입니다.");
+        alert("3입니다.");
+        document.write(`<h2>입력하신 ${inp}는 3과 같습니다.<h2>`);
+      } else {
+        console.log("3보다 작습니다.");
+        alert("3보다 작습니다.");
+        document.write(`<h2>입력하신 ${inp}는 3보다 작습니다.<h2>`);
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

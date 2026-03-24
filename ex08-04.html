@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <script>
+      // 책에 설명이 나오니 꼭 보기!!!!!
+      const a = (b = c = d = e = f = g = 10);
+      let aa, bb, cc, dd, ee, ff, gg;
+      console.log(a, b, c, d, e, f, g);
+      console.log(aa, ~~bb, !!cc, Number(dd), ee, ff, gg);
+      console.log(typeof Number(dd), Number(dd));
+      console.log(Number("반가워요."));
+      console.log(0 / 0);
+      console.log(Math.sqrt(-1));
+      console.log(ee === ff);
+      console.log(undefined === ff);
+      console.log(NaN === NaN);
+      const test = Number(undefined);
+      console.log(test === NaN);
+
+      //   핵심 중요
+      console.log(Number.isNaN(test));
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <label for="in1">실시간 입력:</label>
+    <input
+      type="text"
+      id="in1"
+      placeholder="데이터를 넣어주세요"
+      onclick="showValue(this)"
+    />
+    <hr />
+    <label for="in2">입력:</label>
+    <input type="text" id="in2" />
+    <button onclick="getValue()">입력완료</button>
+    <hr />
+    <h2 id="disp">여기에 표현됩니다.</h2>
+
+    <script>
+      // element에 자기자신이 들어감
+      function showValue(element) {
+        console.log("입력되고 있는 값:", element.value);
+      }
+
+      function getValue(v) {
+        const in2 = document.querySelector("#in2");
+        const disp = document.querySelector("#disp");
+
+        disp.textContent = in2.value; // disp에 in2의 값을 넣겠다. / in2를 쓰면 input 태그 자체를 문자열로 바꾸어 넣는 것 / innerHTML보다 더 안전함
+        // disp.innerHTML = "버튼을 눌렀네?? 어라?"; // disp의 내용을 변경하겠다
+
+        console.log(in2);
+        console.log(disp);
+        // 이런것도 있다~
+        // document.getElementById("in2");
+        // document.querySelector(".clssssss");
+        // document.getElementsByClassName("clssssss");
+      }
+    </script>
+  </body>
+</html>

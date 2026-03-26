@@ -4,9 +4,143 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title></title>
-    <script></script>
+    <style>
+      h2 {
+        text-align: center;
+      }
+      #box {
+        background-color: rgb(235, 216, 191);
+        width: 400px;
+        height: 300px;
+        margin: 10% auto;
+        padding: 40px 10px 40px 30px;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.562);
+        border-radius: 2dvb;
+      }
+      #box > div {
+        height: 30px;
+        margin: 5px;
+        background-color: rgb(113, 180, 211);
+        box-shadow: 10px 10px 20px rgba(58, 43, 126, 0.562);
+        border-radius: 0 15px 15px 0;
+      }
+
+      table {
+        width: 400px;
+        margin: auto;
+      }
+      tr,
+      th,
+      td {
+        background-color: rgb(14, 104, 107);
+        color: white;
+        box-shadow: 10px 10px 20px rgba(50, 50, 50, 0.5);
+        padding: 10px;
+        text-align: center;
+        font-weight: bold;
+        position: relative;
+      }
+      th {
+        background-color: rgb(99, 36, 36);
+      }
+      td:last-of-type {
+        background-color: rgb(34, 42, 156);
+      }
+      span {
+        position: absolute;
+        color: white;
+        font-weight: bold;
+        display: block;
+        text-align: right;
+        line-height: 1.7rem;
+        margin: 0 10px;
+        text-shadow: 5px 5px 20px rgb(0, 0, 0);
+      }
+    </style>
   </head>
   <body>
-    <script></script>
+    <script>
+      const epoch = 100000; // 횟수
+      let turn = 0; // while에 사용하는 증가값
+      const arr = [0, 0, 0, 0, 0, 0]; // new Array(4)
+      let verf = "검증중";
+
+      while (turn < epoch) {
+        const ran = Math.floor(Math.random() * 6);
+        let list = "";
+
+        arr[ran]++;
+
+        turn++;
+      }
+
+      /* 검증프로그램 */
+      if (epoch == arr[0] + arr[1] + arr[2] + arr[3] + arr[4] + arr[5]) {
+        verf = "검증완료";
+      } else {
+        verf = "검증이상";
+        alert("검증이상");
+      }
+
+      const arr0 = ((arr[0] / epoch) * 100).toFixed(1);
+      const arr1 = ((arr[1] / epoch) * 100).toFixed(1);
+      const arr2 = ((arr[2] / epoch) * 100).toFixed(1);
+      const arr3 = ((arr[3] / epoch) * 100).toFixed(1);
+      const arr4 = ((arr[4] / epoch) * 100).toFixed(1);
+      const arr5 = ((arr[5] / epoch) * 100).toFixed(1);
+      list = `<h2>${epoch}회 (${verf})</h2><table>
+      <tr>
+        <th>주사위</th>
+        <th>횟수</th>
+        <th>통계</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>${arr[0]}</td>
+        <td>${arr0}%</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>${arr[1]}</td>
+        <td>${arr1}%</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>${arr[2]}</td>
+        <td>${arr2}%</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>${arr[3]}</td>
+        <td>${arr3}%</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>${arr[4]}</td>
+        <td>${arr4}%</td>
+      </tr>
+      <tr>
+        <td>6</td>
+        <td>${arr[5]}</td>
+        <td>${arr5}%</td>
+      </tr>
+    </table>
+    <div id="box">
+      <div style="width: ${arr0 * 3}%"><span>1 (${arr0}%)</span></div> 
+      <div style="width: ${arr1 * 3}%"><span>2 (${arr1}%)</span></div>
+      <div style="width: ${arr2 * 3}%"><span>3 (${arr2}%)</span></div>
+      <div style="width: ${arr3 * 3}%"><span>4 (${arr3}%)</span></div>
+      <div style="width: ${arr4 * 3}%"><span>5 (${arr4}%)</span></div>
+      <div style="width: ${arr5 * 3}%"><span>6 (${arr5}%)</span></div>
+      </div>
+      <button onclick="location.reload(true)">새로고침</button>     
+    `;
+      //<div style="width: ${arr0 * 1.5}%"> -> 그래프 비율 좋게 만드는 거
+      document.body.innerHTML = list;
+    </script>
   </body>
 </html>

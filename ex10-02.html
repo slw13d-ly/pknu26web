@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      function myscope() {
+        const a = "나는 const의 a 입니다."; // 블록 스코프, 함수 내부에서만 사용가능
+        console.log(a);
+        {
+          var b = "나는 var의 b 입니다."; // 함수 스코프, 함수 내부에서만 사용가능
+          let c = "나는 let의 c 입니다."; // 블록 스코프, 함수 내부에서만 사용가능
+        }
+        console.log(b);
+        console.log(c);
+      }
+      // console.log(a); // 함수스코프는 전역이 아닌 함수스코프로 동작
+      console.log(b);
+      // console.log(c);
+
+      myscope();
+    </script>
+  </body>
+</html>

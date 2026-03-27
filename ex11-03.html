@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <img src="" alt="" />
+    <script>
+      const imgs = document.querySelectorAll("img");
+      console.log(imgs, Array.isArray(imgs));
+
+      imgs.forEach((img, i) => {
+        console.log(i);
+        const width = (i + 1) * 50;
+        const url = `https://placecats.com/${width}/${height}/`;
+        ing.src = url;
+      });
+
+      /* forEach((v, i, a) => ) */
+      // 3개의 인자 (v, i, a)까지 사용 가능
+      // v →
+      // i →
+      // a →
+    </script>
+  </body>
+</html>

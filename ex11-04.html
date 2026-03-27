@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style></style>
+  </head>
+  <body>
+    <h1>forEach 실습</h1>
+    <h2></h2>
+    <h2></h2>
+    <h2></h2>
+    <h2></h2>
+    <h2></h2>
+    <h2></h2>
+    <script>
+      const headers = document.querySelectorAll("h2");
+      const color = ["#ce5151", "#9cc04a", "#3dabb9", "#655ec9", "c546f"];
+      headers.forEach((header, idx) => {
+       header.textContent = "heaher";
+       header.style.color = color[idx];
+       header.style.backgroundColor = rgb(${idx * 50}, ${idx * 50}, ${idx * 50})
+       header.style.padding = "10px";
+       header.style.fontSize = "2rem";
+      })
+    </script>
+  </body>
+</html>

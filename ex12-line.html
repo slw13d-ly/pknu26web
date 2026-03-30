@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const ctx = document.getElementById("myChart");
+      const labels = ["일", "월", "화", "수", "목", "금", "토"];
+      const box = [];
+
+      for (let i = 0; i < 7; i++) {
+        const ran = Math.floor(Math.random() * 100);
+        box.push(ran);
+      }
+      const data = {
+        labels: labels,
+        datasets: [
+          {
+            label: "My First Dataset",
+            data: box,
+            fill: false,
+            borderColor: "rgb(75, 192, 192)",
+            tension: 0.1,
+          },
+        ],
+      };
+      const config = {
+        type: "line",
+        data: data,
+      };
+      new Chart(ctx, config);
+    </script>
+  </body>
+</html>

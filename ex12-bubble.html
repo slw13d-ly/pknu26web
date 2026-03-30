@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <div>
+      <canvas id="myChart"></canvas>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script>
+      const ctx = document.getElementById("myChart");
+
+      const data = {
+        datasets: [
+          {
+            label: "First Dataset",
+            data: [
+              { x: 20, y: 16, r: 15 },
+              { x: 35, y: 20, r: 10 },
+              { x: 50, y: 22, r: 18 },
+              { x: 65, y: 14, r: 20 },
+              { x: 80, y: 18, r: 20 },
+            ],
+            backgroundColor: "rgb(255, 99, 132)",
+          },
+        ],
+      };
+      const config = {
+        type: "bubble",
+        data: data,
+        options: {},
+      };
+      new Chart(ctx, config);
+    </script>
+  </body>
+</html>

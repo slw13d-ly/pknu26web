@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>과제 리스트</title>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f4f4;
+        padding: 30px;
+      }
+
+      .container {
+        width: 500px;
+        margin: 0 auto;
+        background-color: white;
+        padding: 20px;
+        border: 1px solid #ccc;
+      }
+
+      h1 {
+        text-align: center;
+      }
+
+      input {
+        width: 84%;
+        padding: 8px;
+        margin-right: 5px;
+      }
+
+      button {
+        padding: 8px 10px;
+        cursor: pointer;
+      }
+
+      ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background-color: #eee;
+        margin-bottom: 10px;
+        padding: 10px;
+      }
+
+      li input[type="checkbox"] {
+        margin: 0;
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+
+      li > div:first-child {
+        flex: 1;
+      }
+
+      .btn-area {
+        margin-left: auto;
+      }
+
+      .btn-area button {
+        margin-right: 5px;
+      }
+
+      .done {
+        text-decoration: line-through;
+        color: gray;
+      }
+
+      /* 모달 스타일 */
+      .modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, 0.5);
+      }
+
+      .modal-content {
+        background-color: #fff;
+        margin: 15% auto;
+        padding: 20px;
+        width: 400px;
+        border-radius: 8px;
+        position: relative;
+      }
+
+      .close {
+        position: absolute;
+        top: 10px;
+        right: 15px;
+        font-size: 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>과제</h1>
+
+      <input type="text" id="textInput" placeholder="내용을 입력하세요" />
+      <button onclick="addItem()">추가</button>
+
+      <ul id="list"></ul>
+    </div>
+
+    <!-- 수정 모달 -->
+    <div class="modal" id="editModal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h3>항목 수정</h3>
+        <input type="text" id="editInput" />
+        <button id="saveEditBtn">저장</button>
+      </div>
+    </div>
+
+    <script>
+      let items = [];
+
+      window.onload = function () {
+        let savedItems = localStorage.getItem("items");
+        if (savedItems) {
+          items = JSON.parse(savedItems);
+        }
+        renderList();
+      };
+
+      function saveItems() {
+        localStorage.setItem("items", JSON.stringify(items));
+      }
+
+      function renderList() {
+        let list = document.getElementById("list");
+        list.innerHTML = "";
+
+        for (let i = 0; i < items.length; i++) {
+          let li = document.createElement("li");
+
+          let text = document.createElement("div");
+          text.innerText = items[i];
+
+          const checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+
+          li.appendChild(checkbox);
+
+          checkbox.addEventListener("change", () => {
+            li.classList.toggle("done", checkbox.checked);
+          });
+
+          li.addEventListener("click", (e) => {
+            if (e.target !== checkbox) {
+              checkbox.checked = !checkbox.checked;
+              li.classList.toggle("done", checkbox.checked);
+            }
+          });
+
+          let btnArea = document.createElement("div");
+          btnArea.className = "btn-area";
+
+          let editBtn = document.createElement("button");
+          editBtn.innerText = "수정";
+          editBtn.onclick = function () {
+            editItem(i);
+          };
+
+          let deleteBtn = document.createElement("button");
+          deleteBtn.innerText = "삭제";
+          deleteBtn.onclick = function () {
+            deleteItem(i);
+          };
+
+          btnArea.appendChild(editBtn);
+          btnArea.appendChild(deleteBtn);
+
+          li.appendChild(text);
+          li.appendChild(btnArea);
+
+          list.appendChild(li);
+        }
+      }
+
+      function addItem() {
+        let input = document.getElementById("textInput");
+        let value = input.value.trim();
+
+        if (value === "") {
+          alert("내용을 입력하세요");
+          return;
+        }
+
+        items.push(value);
+        saveItems();
+        renderList();
+        input.value = "";
+      }
+
+      function deleteItem(index) {
+        let check = confirm("정말 삭제하시겠습니까?");
+        if (check) {
+          items.splice(index, 1);
+          saveItems();
+          renderList();
+        }
+      }
+
+      // 모달 관련 변수
+      let editIndex = null;
+      const modal = document.getElementById("editModal");
+      const editInput = document.getElementById("editInput");
+      const saveEditBtn = document.getElementById("saveEditBtn");
+      const closeBtn = document.querySelector(".close");
+
+      // 수정 버튼 클릭 시 모달 열기
+      function editItem(index) {
+        editIndex = index;
+        editInput.value = items[index];
+        modal.style.display = "block";
+        editInput.focus();
+      }
+
+      // 저장 버튼 클릭
+      saveEditBtn.onclick = function () {
+        const newValue = editInput.value.trim();
+        if (newValue === "") {
+          alert("빈 값으로 수정할 수 없습니다");
+          return;
+        }
+        items[editIndex] = newValue;
+        saveItems();
+        renderList();
+        modal.style.display = "none";
+      };
+
+      // 닫기 버튼 클릭
+      closeBtn.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      // 모달 외부 클릭 시 닫기
+      window.onclick = function (event) {
+        if (event.target === modal) {
+          modal.style.display = "none";
+        }
+      };
+
+      // Enter 키로 저장 가능
+      editInput.addEventListener("keyup", function (e) {
+        if (e.key === "Enter") {
+          saveEditBtn.click();
+        }
+      });
+    </script>
+  </body>
+</html>

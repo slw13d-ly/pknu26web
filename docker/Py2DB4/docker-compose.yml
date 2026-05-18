@@ -77,7 +77,8 @@ services:
     ports:
       - "3300:3300"
     volumes:
-      - py3_data:/app
+      - D:\\code\\pknu26web\\react\\04.docker연동\\ex01\\dist:/app/dist
+      - D:D:\data\jupyter_data\\:/app
     restart: unless-stopped
     networks:
       - pknu_net

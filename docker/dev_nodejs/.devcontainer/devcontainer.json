@@ -1,0 +1,11 @@
+{
+  "name": "my node js",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "setting": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "forwardPorts": [5173, 3300],
+  "postCreateCommand": "npm i express && echo 'Ready!'"
+}

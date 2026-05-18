@@ -1,0 +1,132 @@
+/* 기본 모드 스타일 */
+.light-mode {
+  background-color: #f5f5f5;
+  color: rgb(97, 160, 161);
+}
+
+.dark-mode {
+  background-color: rgb(6, 7, 32);
+  color: rgb(227, 241, 241);
+}
+
+/* 중앙 정렬된 카드형 레이아웃 */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* 제목 스타일 */
+.page-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: rgb(0, 0, 0);
+}
+
+.page-title h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: rgb(41, 128, 185);
+}
+
+.page-title h2 {
+  font-size: 1.2rem;
+  margin: 5px 0 20px;
+  color: rgb(60, 117, 148);
+}
+
+/* 버튼 스타일 */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 24px;
+  margin: 10px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: rgb(41, 128, 185);
+}
+
+.btn-primary:hover {
+  background-color: rgb(24, 102, 144);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background-color: rgb(108, 152, 184);
+}
+
+.btn-secondary:hover {
+  background-color: rgb(59, 128, 170);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* 데이터 카드 스타일 */
+.data-card {
+  background-color: rgb(245, 247, 249);
+  border-radius: 12px;
+  padding: 24px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgb(226, 232, 240);
+  color: rgb(30, 40, 59);
+}
+
+.data-card h3 {
+  font-size: 1.1rem;
+  margin: 0 0 12px;
+  color: rgb(29, 55, 78);
+  border-bottom: 2px solid rgb(226, 232, 240);
+  padding-bottom: 8px;
+}
+
+.data-card h4 {
+  font-size: 0.95rem;
+  margin: 8px 0;
+  color: rgb(60, 117, 148);
+}
+
+.data-card hr {
+  border: none;
+  border-top: 1px solid rgb(226, 232, 240);
+  margin: 12px 0;
+}
+
+/* 반응형 */
+@media (max-width: 600px) {
+  .container {
+    padding: 15px;
+  }
+
+  .page-title h1 {
+    font-size: 1.5rem;
+  }
+
+  .page-title h2 {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 10px 18px;
+    margin: 8px;
+  }
+}

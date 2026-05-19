@@ -19,15 +19,11 @@ function App() {
   return (
     <div className="App">
       <h1>카운터</h1>
-
-      <p>현재 값: {count}</p>
-
+      <p className="value">현재 값: {count}</p>
       <button onClick={handleClickIncrease}>증가 버튼</button>
-
       <button onClick={handleClickDecrease}>감소 버튼</button>
     </div>
   );
 }
 
 export default App;
-onabort;

@@ -3,7 +3,6 @@ body {
 }
 
 #root {
-  width: 1126px;
   max-width: 100%;
   margin: 0 auto;
   text-align: center;
@@ -12,13 +11,4 @@ body {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-}
-
-h1 {
-  color: blue;
-}
-
-.value {
-  background-color: cadetblue;
-  color: aliceblue;
 }

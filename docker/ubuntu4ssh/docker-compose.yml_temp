@@ -1,0 +1,30 @@
+services:
+  pkuser01:
+    image: pkteam:1.0
+    container_name: pkuser01
+    hostname: PK01
+    ports:
+      - "2201:22"
+    restart: unless-stopped
+    volumes:
+      - D:/data/container_ssh/pkuser01:/home/pkuser/data
+
+  pkuser02:
+    image: pkteam:1.0
+    container_name: pkuser02
+    hostname: PK02
+    ports:
+      - "2201:22"
+    restart: unless-stopped
+    volumes:
+      - D:/data/container_ssh/pkuser02:/home/pkuser/data
+
+  pkuser03:
+    image: pkteam:1.0
+    container_name: pkuser03
+    hostname: PK03
+    ports:
+      - "2201:22"
+    restart: unless-stopped
+    volumes:
+      - D:/data/container_ssh/pkuser03:/home/pkuser/data

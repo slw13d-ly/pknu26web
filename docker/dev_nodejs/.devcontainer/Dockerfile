@@ -1,21 +1,22 @@
+# 베이스 이미지: Ubuntu 최신 버전
 FROM ubuntu:22.04
-LABEL maintainer="YJ a01046602898@gmail.com"
-RUN apt update &&\
-    apt upgrade -y &&\
-    apt install -y sudo passwd openssh-server wget nano net-tools iputils-ping openjdk-8-jdk python3-pip &&\
-    apt clean &&\
-    rm -rf /var/lib/apt/lists/* 
-RUN groupadd pkdata &&\
-    useradd -m -d /home/pkdata -s /bin/bash -g pkdata -G sudo pkdata &&\
-    echo "pkdata:1234" | chpasswd &&\   
-    mkdir -p /home/pkdata/.ssh &&\
-    chown -R pkdata:pkdata /home/pkdata &&\
-    echo "export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64" >> /home/pkdata/.bashrc &&\
-    chown pkdata:pkdata /home/pkdata/.bashrc &&\
-    mkdir -p /var/run/sshd &&\
-    echo "PermitRootLogin no" >> /etc/ssh/sshd_config &&\
-    echo "PasswordAuthentication yes" >> /etc/ssh/sshd_config   
 
-ENV PATH="/home/pkdata/.local/bin:$PATH"
+# 필수 패키지 설치
+RUN apt-get update && apt-get install -y \
+    curl \
+    sudo \
+    bash \
+    git \
+    build-essential
 
-CMD ["/bin/bash","-c","service ssh start && exe3c /bin/bash"]
+# NodeSource 스크립트로 최신 LTS Node.js 설치
+RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - \
+    && apt-get install -y nodejs
+
+# npm 최신 버전으로 업데이트
+RUN npm install -g npm@latest
+
+# 작업 디렉토리 설정
+WORKDIR /workspace
+
+

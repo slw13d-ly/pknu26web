@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!-- 학생 실습용: HDFS의 기본 파일시스템 주소를 NameNode로 지정 -->
+<configuration>
+    <property>
+        <name>fs.defaultFS</name>
+        <value>hdfs://namenode:9000</value>
+        <description>NameNode URI</description>
+    </property>
+    <property>
+        <name>hadoop.http.staticuser.user</name>
+        <value>root</value>
+        <description>Web UI 기본 사용자 설정 (dr.who 권한 문제 해결)</description>
+    </property>
+</configuration>

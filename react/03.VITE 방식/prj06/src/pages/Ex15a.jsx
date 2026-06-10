@@ -1,17 +1,22 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function Ex15() {
   const [position, setPosition] = useState({ x: 0, y: 0 });
-
+  const positionRef = useRef(position);
+  const idRef = useRef(null);
   return (
     <>
       <h1>15. 마우스 좌표</h1>
       {JSON.stringify(position)}
       <div
         onPointerMove={(e) => {
-          console.log(e.clientX, e.clientY);
+          // console.log(e.clientX, e.clientY);
           console.log(position.x, position.y);
-          setPosition({ x: e.clientX, y: e.clientY });
+
+          idRef.current = requestAnimationFrame(() => {
+            setPosition(positionRef.current);
+            idRef.current = null;
+          });
         }}
         style={{
           width: "100%",

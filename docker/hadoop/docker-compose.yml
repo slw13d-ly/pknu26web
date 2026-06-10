@@ -1,0 +1,91 @@
+version: '3.8'
+
+services:
+  namenode:
+    build: .
+    container_name: namenode
+    hostname: namenode
+    ports:
+      - "9870:9870"   # HDFS 웹 UI
+      - "8088:8088"   # YARN 웹 UI
+      - "9000:9000"   # HDFS 통신 포트
+    volumes:
+      - ./config/core-site.xml:/usr/local/hadoop/etc/hadoop/core-site.xml
+      - ./config/hdfs-site.xml:/usr/local/hadoop/etc/hadoop/hdfs-site.xml
+      - ./config/mapred-site.xml:/usr/local/hadoop/etc/hadoop/mapred-site.xml
+      - ./config/yarn-site.xml:/usr/local/hadoop/etc/hadoop/yarn-site.xml
+      - ./config/workers:/usr/local/hadoop/etc/hadoop/workers
+      - hadoop_namenode_data:/hadoop/dfs/name
+    command: /usr/local/bin/start-namenode.sh
+    networks:
+      - hadoop-net
+
+  datanode1:
+    build: .
+    container_name: datanode1
+    hostname: datanode1
+    depends_on:
+      - namenode
+    ports:
+      - "9864:9864"
+    environment:
+      - HDFS_DATANODE_OPTS=-Ddfs.datanode.http.address=0.0.0.0:9864
+    volumes:
+      - ./config/core-site.xml:/usr/local/hadoop/etc/hadoop/core-site.xml
+      - ./config/hdfs-site.xml:/usr/local/hadoop/etc/hadoop/hdfs-site.xml
+      - ./config/mapred-site.xml:/usr/local/hadoop/etc/hadoop/mapred-site.xml
+      - ./config/yarn-site.xml:/usr/local/hadoop/etc/hadoop/yarn-site.xml
+      - hadoop_datanode1_data:/hadoop/dfs/data
+    command: /usr/local/bin/start-datanode.sh
+    networks:
+      - hadoop-net
+
+  datanode2:
+    build: .
+    container_name: datanode2
+    hostname: datanode2
+    depends_on:
+      - namenode
+    ports:
+      - "9865:9865"
+    environment:
+      - HDFS_DATANODE_OPTS=-Ddfs.datanode.http.address=0.0.0.0:9865
+    volumes:
+      - ./config/core-site.xml:/usr/local/hadoop/etc/hadoop/core-site.xml
+      - ./config/hdfs-site.xml:/usr/local/hadoop/etc/hadoop/hdfs-site.xml
+      - ./config/mapred-site.xml:/usr/local/hadoop/etc/hadoop/mapred-site.xml
+      - ./config/yarn-site.xml:/usr/local/hadoop/etc/hadoop/yarn-site.xml
+      - hadoop_datanode2_data:/hadoop/dfs/data
+    command: /usr/local/bin/start-datanode.sh
+    networks:
+      - hadoop-net
+
+  datanode3:
+    build: .
+    container_name: datanode3
+    hostname: datanode3
+    depends_on:
+      - namenode
+    ports:
+      - "9866:9866"
+    environment:
+      - HDFS_DATANODE_OPTS=-Ddfs.datanode.http.address=0.0.0.0:9866
+    volumes:
+      - ./config/core-site.xml:/usr/local/hadoop/etc/hadoop/core-site.xml
+      - ./config/hdfs-site.xml:/usr/local/hadoop/etc/hadoop/hdfs-site.xml
+      - ./config/mapred-site.xml:/usr/local/hadoop/etc/hadoop/mapred-site.xml
+      - ./config/yarn-site.xml:/usr/local/hadoop/etc/hadoop/yarn-site.xml
+      - hadoop_datanode3_data:/hadoop/dfs/data
+    command: /usr/local/bin/start-datanode.sh
+    networks:
+      - hadoop-net
+
+volumes:
+  hadoop_namenode_data:
+  hadoop_datanode1_data:
+  hadoop_datanode2_data:
+  hadoop_datanode3_data:
+
+networks:
+  hadoop-net:
+    driver: bridge

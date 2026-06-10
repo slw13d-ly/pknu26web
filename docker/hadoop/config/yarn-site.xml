@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 학생 실습용: YARN ResourceManager 설정 -->
+<configuration>
+    <property>
+        <name>yarn.resourcemanager.hostname</name>
+        <value>namenode</value>
+        <description>ResourceManager가 실행되는 호스트 이름</description>
+    </property>
+    <property>
+        <name>yarn.nodemanager.aux-services</name>
+        <value>mapreduce_shuffle</value>
+        <description>MapReduce를 위한 Shuffle 서비스 활성화</description>
+    </property>
+</configuration>

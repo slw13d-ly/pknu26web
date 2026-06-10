@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<!-- 학생 실습용: HDFS 복제 계수 및 데이터 저장 경로 설정 -->
+<configuration>
+    <property>
+        <name>dfs.replication</name>
+        <value>3</value>
+        <description>데이터를 3개의 DataNode에 복제하여 저장</description>
+    </property>
+    <property>
+        <name>dfs.namenode.name.dir</name>
+        <value>file:///hadoop/dfs/name</value>
+        <description>NameNode 메타데이터 저장 경로</description>
+    </property>
+    <property>
+        <name>dfs.datanode.data.dir</name>
+        <value>file:///hadoop/dfs/data</value>
+        <description>DataNode 실제 데이터 저장 경로</description>
+    </property>
+    <property>
+        <name>dfs.permissions.enabled</name>
+        <value>false</value>
+        <description>학생 실습용: 권한 검사 비활성화</description>
+    </property>
+    <property>
+        <name>dfs.client.use.datanode.hostname</name>
+        <value>true</value>
+        <description>호스트에서 Web UI 연동 시 DataNode 호스트명 사용</description>
+    </property>
+    <property>
+        <name>dfs.datanode.use.datanode.hostname</name>
+        <value>true</value>
+        <description>DataNode 호스트명 사용</description>
+    </property>
+</configuration>
